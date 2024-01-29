@@ -6,6 +6,7 @@ public class Fraction {
     public Fraction(int numerator, int denominator) {
         this.numerator = numerator;
         this.setDenominator(denominator);
+        numberOfFractions++;
     }
     
     public Fraction(Fraction f) {

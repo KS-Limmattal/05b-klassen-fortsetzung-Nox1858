@@ -29,7 +29,7 @@ public class FractionTester {
         a.add(c);
         System.out.println(a);
         // statische Variablen:
-
+        System.out.println(Fraction.numberOfFractions);
     }
 
 }
