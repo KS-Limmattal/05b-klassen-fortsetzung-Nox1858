@@ -14,13 +14,16 @@ public class FractionTester {
 
         // toString():
         System.out.println(f);
+
         // Encapsulation, Getter und Setter:
         Fraction g = new Fraction(16, 2);
         Fraction m = new Fraction(42, 1);
+
         // Copy-Konstruktor und equals():
         Fraction h = new Fraction(f);
         System.out.println(m + " und " + f + " sind " + (m.equals(f) ? "" : "nicht ") + "gleich!");
         System.out.println(m + " und " + g + " sind " + (m.equals(g) ? "" : "nicht ") + "gleich!");
+
         // Klassen- und Instanzenmethoden:
         Fraction a = new Fraction(1,2);
         Fraction b = new Fraction(2,3);
@@ -29,8 +32,10 @@ public class FractionTester {
         System.out.println(d+" "+a+" "+b);
         a.add(c);
         System.out.println(a);
+
         // statische Variablen:
         System.out.println(Fraction.numberOfFractions);
+
         // Konstanten:
         // PI++; //geht nicht, wird von VSC unterstrichen
         System.out.println(PI);
@@ -100,6 +105,20 @@ public class FractionTester {
         Fraction o = new Fraction(-3,12);
         n.divide(o);
         System.out.println(n);
+
+        //Mixed Number
+        MixedNumber mix1 = new MixedNumber(16,27,536);
+        MixedNumber mix2 = new MixedNumber(16,-4,36);
+        MixedNumber mix3 = new MixedNumber(6,27,56);
+        MixedNumber mix4 = new MixedNumber(12,27,246);
+        MixedNumber mix5 = new MixedNumber(16,27,536);
+        MixedNumber mix6 = new MixedNumber(16,27,536);
+        System.out.println(mix1);
+        System.out.println(mix2);
+        System.out.println(mix3);
+        System.out.println(mix4);
+        System.out.println(mix5);
+        System.out.println(mix6);
     }
 
 }

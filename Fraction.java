@@ -8,7 +8,7 @@ public class Fraction {
         this.setDenominator(denominator);
         numberOfFractions++;
     }
-    
+
     public Fraction(Fraction f) {
         this(f.numerator, f.denominator);
     }
@@ -43,20 +43,8 @@ public class Fraction {
     @Override
     public String toString() {
         simplify();
-        // gemischte Nummern sind unschön...
-        if(numerator/denominator >= 1 || numerator/denominator <= -1){
-            if(numerator%denominator != 0){
-                if(numerator <0){
-                    // wenn der bruch negativ ist, bsp. -3/2, soll es nicht -1+-1/2 geben, sondern -1-1/2
-                    return ""+numerator/denominator+numerator%denominator+"/"+denominator;
-                } else{
-                    return ""+numerator/denominator+"+"+numerator%denominator+"/"+denominator;
-                }
-            } else{
-                return ""+numerator/denominator;
-            }
-        }
-        return numerator + "/" + denominator;
+        MixedNumber f = new MixedNumber(this);
+        return f.toString();
     }
 
     //equals:
@@ -70,7 +58,7 @@ public class Fraction {
             this.numerator = -this.numerator;
             this.denominator = -this.denominator;
         }
-        int divisor = gcd(this.numerator,this.denominator);
+        int divisor = gcd(this.denominator,this.numerator);
         this.numerator /= divisor;
         this.denominator /= divisor;
     }
@@ -144,7 +132,7 @@ public class Fraction {
         return a;
     }
     
-    //dividation:
+    //division:
     public void divide(Fraction f) {
         if(f.numerator == 0){
             throw new ArithmeticException("Division by zero");
